@@ -9,6 +9,7 @@
 object HigherOrderFunctions {
   def main(args: Array[String]) {
     function1(5.345, multiplyBy2)
+    anonymousFunctions()
   }
 
   /**
@@ -36,7 +37,7 @@ object HigherOrderFunctions {
         val y = b * 2
         (x+y)/2
       }
-    println(result)
+    println(result(2,3))
   }
   /**
     * function to multiply a number by 2
