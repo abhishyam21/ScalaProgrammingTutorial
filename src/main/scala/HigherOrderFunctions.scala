@@ -18,6 +18,8 @@ object HigherOrderFunctions {
     var result3 = result2(40)
     var result4 = result3(40)
     println(result4)
+    funWithDefaultValues(23.456)
+    funWithDefaultValues(89.8765,"Kiran",false)
   }
 
   /**
@@ -83,6 +85,15 @@ object HigherOrderFunctions {
     a+b+c
   }
 
+  /**
+    * Function with default values
+    */
+  def funWithDefaultValues(total: Double, payment:String = "Abhishyam", flag : Boolean = true) =
+    println(total+"\t"+payment+"\t"+flag)
+
+  val taxCalculation = new ((Double, Int) => Double) {
+    def apply(amount: Double, tax: Int): Double = (amount/100)*tax
+  }
   /**
     * function to multiply a number by 2
     */
