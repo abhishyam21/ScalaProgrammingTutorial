@@ -10,6 +10,14 @@ object HigherOrderFunctions {
   def main(args: Array[String]) {
     function1(5.345, multiplyBy2)
     anonymousFunctions()
+    var a = multiParameterFunction(1,2,3,4,5,6)
+    println(a)
+    var res1 = functionCurrying(10)(20)(30)
+    println(res1)
+    var  result2 = functionCurrying(40)_
+    var result3 = result2(40)
+    var result4 = result3(40)
+    println(result4)
   }
 
   /**
@@ -38,7 +46,43 @@ object HigherOrderFunctions {
         (x+y)/2
       }
     println(result(2,3))
+
+    var result2 = (_: Double) / (_: Double)
+    println(result2(10,2))
   }
+
+  /**
+    * Function which accepts multiple parameters
+    * @param args
+    * @return
+    */
+  def multiParameterFunction(args : Int*) ={
+    var sum = 0
+    for( a <- args)
+      sum+=a
+   sum
+  }
+
+  /**
+    * Function with multiple inner functions
+    * @param a
+    * @param b
+    */
+  def multipleFunctions(a: Int, b:Int)={
+    var kiran = "Kiran"
+    def inner1(a: Int) = {
+      def inner12(a: Int) ={
+      var abhi1 = "abhishyam"
+      }
+      def inner13(a: Int) = {
+      }
+    }
+  }
+
+  def functionCurrying(a:Int)(b:Int)(c:Int) ={
+    a+b+c
+  }
+
   /**
     * function to multiply a number by 2
     */
